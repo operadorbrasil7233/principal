@@ -1,32 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#FF8700" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <title>Banco Inter</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+<html>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+<head>
+  <title>Interface de Usuário Bancário</title>
+  <style>
+    /* CSS para estilização da página */
+  </style>
+</head>
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+<body>
+  <h1>Bem-vindo(a) ao Banco XYZ</h1>
+
+  <div id="saldoConta">
+    <h3>Saldo da Conta: R$ 1000,00</h3>
+  </div>
+
+  <div id="opcoesBancarias">
+    <button onclick="exibirExtrato()">Extrato</button>
+    <button onclick="realizarTransferencia()">Transferência</button>
+    <button onclick="verGraficoInvestimentos()">Gráfico de Investimentos</button>
+  </div>
+
+  <div id="extrato" style="display: none;">
+    <!-- Lógica para exibir o extrato das transações -->
+  </div>
+
+  <div id="transferencia" style="display: none;">
+    <!-- Lógica para realizar transferências -->
+  </div>
+
+  <div id="graficoInvestimentos" style="display: none;">
+    <!-- Lógica para exibir gráfico de investimentos -->
+    <!-- Utilize a biblioteca TradingView para adicionar os widgets -->
+  </div>
+
+  <script>
+    // Função para exibir o extrato das transações
+    function exibirExtrato() {
+      document.getElementById("extrato").style.display = "block";
+      document.getElementById("transferencia").style.display = "none";
+      document.getElementById("graficoInvestimentos").style.display = "none";
+    }
+
+    // Função para realizar a transferência
+    function realizarTransferencia() {
+      document.getElementById("extrato").style.display = "none";
+      document.getElementById("transferencia").style.display = "block";
+      document.getElementById("graficoInvestimentos").style.display = "none";
+    }
+
+    // Função para exibir o gráfico de investimentos
+    function verGraficoInvestimentos() {
+      document.getElementById("extrato").style.display = "none";
+      document.getElementById("transferencia").style.display = "none";
+      document.getElementById("graficoInvestimentos").style.display = "block";
+    }
+
+    // Cronômetro para redirecionar para href=index.html após 8 minutos
+    setTimeout(function () {
+      window.location.href = "index.html";
+    }, 8 * 60 * 1000);
+  </script>
+</body>
+
 </html>
+```
